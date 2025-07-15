@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THE GOLDEN CAFÈ</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f0;
+      padding: 20px;
+      color: #3e3e3e;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d35400;
+      margin-bottom: 25px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-shadow: 1px 1px 2px #f39c12;
+    }
+
+    /* Two-column container */
+    .container {
+      display: flex;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Left and right menu containers */
+    .menu-left, .menu-right {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      border: 2px solid #d35400;
+      box-shadow: 0 8px 15px rgb(211 84 0 / 0.3);
+      flex: 1 1 400px;
+      min-width: 320px;
+      box-sizing: border-box;
+    }
+
+    .menu-right {
+      background-color: #fdf6ec;
+    }
+
+    .form-group {
+      margin: 12px 0;
+    }
+
+    label {
+      display: inline-block;
+      width: 160px;
+      font-weight: 600;
+      color: #7f8c8d;
+    }
+
+    input[type="number"] {
+      width: 70px;
+      padding: 5px;
+      border: 1.5px solid #d35400;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #34495e;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgb(39 174 96 / 0.3);
+      transition: background-color 0.3s ease;
+      display: block;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #219150;
+    }
+
+    #invoice {
+      margin-top: 30px;
+      padding: 20px 30px;
+      background: #fff;
+      border-radius: 10px;
+      border: 2px solid #d35400;
+      box-shadow: 0 8px 15px rgb(211 84 0 / 0.3);
+      white-space: pre-wrap;
+      font-family: 'Courier New', Courier, monospace;
+      color: #2c3e50;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #invoice h2 {
+      color: #d35400;
+      border-bottom: 2px solid #d35400;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    #invoice .item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    #invoice .total {
+      border-top: 2px solid #d35400;
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-top: 15px;
+      padding-top: 12px;
+      color: #e74c3c;
+    }
+
+    #invoice .thankyou {
+      margin-top: 20px;
+      text-align: center;
+      font-style: italic;
+      color: #27ae60;
+      font-weight: 600;
+    }
+
+    /* Heading inside menus */
+    .menu-left h3, .menu-right h3 {
+      color: #d35400;
+      border-bottom: 2px solid #d35400;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>THE GOLDEN CAFÈ</h1>
+
+  <div class="container">
+    <div class="menu-left">
+      <h3>Menu Left Side</h3>
+      <div class="form-group">
+        <label for="pizza">Pizza (₹100):</label>
+        <input type="number" id="pizza" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="dhokla">Dhokla (₹50):</label>
+        <input type="number" id="dhokla" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="pasta">Pasta (₹200):</label>
+        <input type="number" id="pasta" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="coldrink">Coldrink (₹50):</label>
+        <input type="number" id="coldrink" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="thepla">Thepla (₹30):</label>
+        <input type="number" id="thepla" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="vadapav">Vadapav (₹70):</label>
+        <input type="number" id="vadapav" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="idli">Idli (₹60):</label>
+        <input type="number" id="idli" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="dosa">Dosa (₹200):</label>
+        <input type="number" id="dosa" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="vada">Vada (₹80):</label>
+        <input type="number" id="vada" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="water">Mineral Water (₹50):</label>
+        <input type="number" id="water" min="0" value="0" />
+      </div>
+    </div>
+
+    <div class="menu-right">
+      <h3>Menu Right Side</h3>
+      <div class="form-group">
+        <label for="khaman">Khaman (₹50):</label>
+        <input type="number" id="khaman" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="locho">Locho (₹100):</label>
+        <input type="number" id="locho" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="coffee">Coffee (₹100):</label>
+        <input type="number" id="coffee" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="tea">Tea (₹100):</label>
+        <input type="number" id="tea" min="0" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="sandwich">Sandwich (₹100):</label>
+        <input type="number" id="sandwich" min="0" value="0" />
+      </div>
+
+      <button onclick="generateInvoice()">Generate Invoice</button>
+    </div>
+  </div>
+
+  <div id="invoice"></div>
+
+  <script>
+    function generateInvoice() {
+      const prices = {
+        Pizza: 100,
+        Dhokla: 50,
+        Pasta: 200,
+        Coldrink: 50,
+        Thepla: 30,
+        Vadapav: 70,
+        Idli: 60,
+        Dosa: 200,
+        Vada: 80,
+        'Mineral Water': 50,
+        Khaman: 50,
+        Locho: 100,
+        Coffee: 100,
+        Tea: 100,
+        Sandwich: 100
+      };
+
+      const qtys = {
+        Pizza: parseInt(document.getElementById("pizza").value) || 0,
+        Dhokla: parseInt(document.getElementById("dhokla").value) || 0,
+        Pasta: parseInt(document.getElementById("pasta").value) || 0,
+        Coldrink: parseInt(document.getElementById("coldrink").value) || 0,
+        Thepla: parseInt(document.getElementById("thepla").value) || 0,
+        Vadapav: parseInt(document.getElementById("vadapav").value) || 0,
+        Idli: parseInt(document.getElementById("idli").value) || 0,
+        Dosa: parseInt(document.getElementById("dosa").value) || 0,
+        Vada: parseInt(document.getElementById("vada").value) || 0,
+        'Mineral Water': parseInt(document.getElementById("water").value) || 0,
+        Khaman: parseInt(document.getElementById("khaman").value) || 0,
+        Locho: parseInt(document.getElementById("locho").value) || 0,
+        Coffee: parseInt(document.getElementById("coffee").value) || 0,
+        Tea: parseInt(document.getElementById("tea").value) || 0,
+        Sandwich: parseInt(document.getElementById("sandwich").value) || 0,
+      };
+
+      const formatRupee = (amount) => "₹" + amount.toLocaleString("en-IN");
+
+      let items = [];
+      let total = 0;
+
+      for (const item in qtys) {
+        const qty = qtys[item];
+        if (qty > 0) {
+          const itemTotal = qty * prices[item];
+          items.push({ name: item, qty, itemTotal });
+          total += itemTotal;
+        }
+      }
+
+      const invoiceBox = document.getElementById("invoice");
+
+      if (total === 0) {
+        invoiceBox.innerHTML = `<p style="color: #e74c3c; font-weight: 700; text-align: center;">
+          Please enter quantities for at least one item.
+        </p>`;
+        return;
+      }
+
+      let invoiceHTML = `
+        <h2>🧾 Invoice - THE GOLDEN CAFÈ</h2>
+        <div>
+          ${items.map(item => `
+            <div class="item">
+              <span>${item.name} x ${item.qty}</span>
+              <span>${formatRupee(item.itemTotal)}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="total">Total: ${formatRupee(total)}</div>
+        <div class="thankyou">Thank you for ordering at THE GOLDEN CAFÈ! 🍽️</div>
+      `;
+
+      invoiceBox.innerHTML = invoiceHTML;
+    }
+  </script>
+</body>
+</html>
